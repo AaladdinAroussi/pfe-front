@@ -13,27 +13,26 @@ export class RegisterComponent implements OnInit {
   form!: FormGroup;
 
   constructor(private router: Router, private fb: FormBuilder, private service: AuthService) { }
+
   get usernameControl() {
     return this.form.get('username');
   }
+  
   get emailControl() {
     return this.form.get('email');
   }
+  
   get passwordControl() {
     return this.form.get('password');
   }
-  
 
   ngOnInit(): void {
-    
     this.form = this.fb.group({
       username: ['', Validators.required],
-      email: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]], // Correctly set up validators as an array
       password: ['', Validators.required],
     });
   }
-  
-  
 
   signUp(): void {
     console.log('signUp() called'); 
@@ -55,5 +54,4 @@ export class RegisterComponent implements OnInit {
       this.form.markAllAsTouched();
     }
   }
-  
 }
