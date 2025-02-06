@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SuperAdminService {
-  private baseUrl = 'http://localhost:8080/api/superAdmin'; // Remplacez par l'URL de votre API
-
+    private baseUrl = `${environment.url}/api/superAdmin/`;
+  
   constructor(private http: HttpClient) { }
 
   // Level Endpoints
@@ -20,14 +21,20 @@ export class SuperAdminService {
   }
 
   deleteLevel(id: number, superadminId: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}deleteLevel?id=${id}&superadminId=${superadminId}`);
+    // Updated URL structure for clarity and maintainability
+    return this.http.delete(`${this.baseUrl}deleteLevel`, {
+      params: {
+        id: id.toString(),
+        superadminId: superadminId.toString()
+      }
+    });
   }
 
   // Category Offer Endpoints
-  createCategoryOffer(categoryOffer: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}saveCategoryOffer`, categoryOffer);
-  }
 
+  createCategoryOffer(categoryOffer: any, superadminId: number): Observable<any> {
+    return this.http.post(`${this.baseUrl}saveCategoryOffer?superAdminId=${superadminId}`, categoryOffer);
+  }
 
 
   updateCategoryOffer(categoryOffer: any, id: number): Observable<any> {
@@ -39,8 +46,8 @@ export class SuperAdminService {
   }
 
   // City Endpoints
-  createCity(city: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}saveCity`, city);
+  createCity(city: any, superadminId: number): Observable<any> {
+    return this.http.post(`${this.baseUrl}saveCity?superAdminId=${superadminId}`, city);
   }
 
   updateCity(city: any, id: number): Observable<any> {
@@ -52,8 +59,8 @@ export class SuperAdminService {
   }
 
   // Sector Endpoints
-  createSector(sector: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}saveSector`, sector);
+  createSector(sector: any, superadminId: number): Observable<any> {
+    return this.http.post(`${this.baseUrl}saveSector?superAdminId=${superadminId}`, sector);
   }
 
   updateSector(sector: any, id: number): Observable<any> {

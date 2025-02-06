@@ -13,6 +13,10 @@ export class HeaderComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.isLoggedIn();
+    this.isCandidat();
+    this.isAdmin();
+    this.isSuperAdmin();
   }
 
   isLoggedIn(): boolean {
@@ -24,6 +28,24 @@ export class HeaderComponent implements OnInit {
       const user = JSON.parse(userConnect);
       const roles = user.roles;
       return roles && roles.includes('ROLE_ADMIN');
+    }
+    return false;
+  }
+  isCandidat(): boolean {
+    const userConnect = localStorage.getItem("userconnect");
+    if (userConnect) {
+      const user = JSON.parse(userConnect);
+      const roles = user.roles;
+      return roles && roles.includes('ROLE_CANDIDAT');
+    }
+    return false;
+  }
+  isSuperAdmin(): boolean {
+    const userConnect = localStorage.getItem("userconnect");
+    if (userConnect) {
+      const user = JSON.parse(userConnect);
+      const roles = user.roles;
+      return roles && roles.includes('ROLE_SUPERADMIN');
     }
     return false;
   }

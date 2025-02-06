@@ -29,7 +29,10 @@
 				<span>Admin Dashboard</span>
 			</li>
 			<!--  -->
-			  <li *ngIf="isLoggedIn() && !isAdmin()" [routerLink]="['/home/candidateDashboard']"> 
+			  <li *ngIf="isLoggedIn() && isCandidat()" [routerLink]="['/home/candidateDashboard']"> 
+				<span>Dashboard</span>
+			  </li>
+			  <li *ngIf="isLoggedIn() && isSuperAdmin()" [routerLink]="['/home/superAdmin/dashboard']"> 
 				<span>Dashboard</span>
 			  </li>
 

@@ -28,6 +28,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterRecruiterComponent } from './component/register-recruiter/register-recruiter.component';
 import { AdminDashboardComponent } from './component/admin-dashboard/admin-dashboard.component';
+import { AddCategoryComponent } from './component/add-category/add-category.component';
+import { AddCityComponent } from './component/add-city/add-city.component';
+import { AddCompanyComponent } from './component/add-company/add-company.component';
+import { AddLevelComponent } from './component/add-level/add-level.component';
+import { AddSectorComponent } from './component/add-sector/add-sector.component';
+import { ListCityComponent } from './component/list-city/list-city.component';
+import { ListCompanyComponent } from './component/list-company/list-company.component';
+import { ListCategoryComponent } from './component/list-category/list-category.component';
+import { ListLevelComponent } from './component/list-level/list-level.component';
+import { ListSectorComponent } from './component/list-sector/list-sector.component';
+import { SuperAdminDashboardComponent } from './component/super-admin-dashboard/super-admin-dashboard.component';
+import { ProfilComponent } from './component/profil/profil.component';
+import { PackagesComponent } from './component/packages/packages.component';
+import { SuperAdminOffersComponent } from './component/super-admin-offers/super-admin-offers.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +67,22 @@ import { AdminDashboardComponent } from './component/admin-dashboard/admin-dashb
     CandidateDashboardComponent,
     PostJobComponent,
     RegisterRecruiterComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    AddCategoryComponent,
+    AddCityComponent,
+    AddCompanyComponent,
+    AddLevelComponent,
+    AddSectorComponent,
+    ListCityComponent,
+    ListCompanyComponent,
+    ListCategoryComponent,
+    ListLevelComponent,
+    ListSectorComponent,
+    SuperAdminDashboardComponent,
+    ProfilComponent,
+    PackagesComponent,
+    SuperAdminOffersComponent,
+    
   ],
   imports: [
     BrowserModule,

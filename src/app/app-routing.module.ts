@@ -20,11 +20,24 @@ import { CandidateDashboardComponent } from './component/candidate-dashboard/can
 import { PostJobComponent } from './component/post-job/post-job.component';
 import { RegisterRecruiterComponent } from './component/register-recruiter/register-recruiter.component';
 import { AdminDashboardComponent } from './component/admin-dashboard/admin-dashboard.component';
+import { AddCategoryComponent } from './component/add-category/add-category.component';
+import { AddCityComponent } from './component/add-city/add-city.component';
+import { AddCompanyComponent } from './component/add-company/add-company.component';
+import { AddLevelComponent } from './component/add-level/add-level.component';
+import { AddSectorComponent } from './component/add-sector/add-sector.component';
+import { ListSectorComponent } from './component/list-sector/list-sector.component';
+import { ListCategoryComponent } from './component/list-category/list-category.component';
+import { ListCityComponent } from './component/list-city/list-city.component';
+import { ListCompanyComponent } from './component/list-company/list-company.component';
+import { ListLevelComponent } from './component/list-level/list-level.component';
+import { PackagesComponent } from './component/packages/packages.component';
+import { ProfilComponent } from './component/profil/profil.component';
+import { SuperAdminOffersComponent } from './component/super-admin-offers/super-admin-offers.component';
+import { SuperAdminDashboardComponent } from './component/super-admin-dashboard/super-admin-dashboard.component';
 
 const routes: Routes = [
 
   { path: 'login', component: LoginComponent }, 
-
   { path: 'register', component: RegisterComponent },
   { path: 'registerRecruiter', component: RegisterRecruiterComponent },
 
@@ -44,7 +57,7 @@ const routes: Routes = [
       { path: 'jobdetails/:id', component: JobDetailsComponent },//jobDetails with id  
       // { path: 'jobdetails', component: JobDetailsComponent },
       { path: 'companylist', component: CompanyListComponent },
-      { path: 'companyDetails', component: CompanyDetailsComponent },
+      { path: 'companyDetails/:id', component: CompanyDetailsComponent },
       //{ path: 'companyDetails/:id', component: CompanyDetailsComponent },//CompanyDetails with id
       { path: 'candidatelist', component: CandidateListComponent },
       { path: 'candidateDetails', component: CandidateDetailsComponent },
@@ -52,6 +65,33 @@ const routes: Routes = [
       { path: 'bloglist', component: BlogListComponent },
       { path: 'blogDetails', component: BlogDetailsComponent },
       //{ path: 'blogDetails/:id', component: BlogDetailsComponent },//blogDetails with id
+      { path: 'addCompany', component: AddCompanyComponent },
+      { path: 'profil', component: ProfilComponent },
+
+      { path: 'superAdmin/dashboard', component: SuperAdminDashboardComponent },
+      { path: 'superAdmin/addCategory', component: AddCategoryComponent },
+      { path: 'superAdmin/addCity', component: AddCityComponent },
+      { path: 'superAdmin/addLevel', component: AddLevelComponent },
+      { path: 'superAdmin/addSector', component: AddSectorComponent },
+      { path: 'superAdmin/sectorList', component: ListSectorComponent },
+      { path: 'superAdmin/categoryList', component: ListCategoryComponent },
+      { path: 'superAdmin/cityList', component: ListCityComponent },
+      { path: 'superAdmin/companyList', component: ListCompanyComponent },
+      { path: 'superAdmin/levelList', component: ListLevelComponent },
+      { path: 'superAdmin/packages', component: PackagesComponent },
+      { path: 'superAdmin/offers', component: SuperAdminOffersComponent },
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
